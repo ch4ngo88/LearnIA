@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self'; 
+        script-src 'self'; 
+        style-src 'self' 'unsafe-inline'; 
+        img-src 'self' data:; 
+        font-src 'self' data:; 
+        frame-src 'self'; 
+        child-src 'self';
+        connect-src 'self';"
+    />
+    <meta http-equiv="Permissions-Policy" content="usb=*, battery=*" />
+    <meta
+      property="og:image"
+      content="https://tradicoesportuguesas.com/bilder/logo.jpg"
+    />
+    <link rel="stylesheet" href="frontend/css/normalize.css" />
+    <link rel="stylesheet" href="frontend/css/sanitize.css" />
+    <link rel="stylesheet" href="frontend/css/styles.css" />
+    <title>LernIA</title>
+    <meta
+      name="description"
+      content="Intelligente, personalisierte Lernplattform"
+    />
+    <meta
+      name="keywords"
+      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning"
+    />
+    <meta
+      name="author"
+      content="Marco da Silva, Clara Rosenhahn, Sascha Kalnins, Stephanie Ong"
+    />
+    <link rel="canonical" href="https://tradicoesportuguesas.com/index.html" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="LernIA" />
+    <meta
+      property="og:description"
+      content="Intelligente, personalisierte Lernplattform"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="frontend/assets/images/images.jpg" alt="LernIA Logo" />
+        </div>
+      </div>
+    </header>
+
+    <div class="auth-buttons">
+      <form action="login.php" method="POST">
+        <button type="submit">Login</button>
+      </form>
+      <form action="register.php" method="POST">
+        <button type="submit">Registrierung</button>
+      </form>
+    </div>
+
+    <div class="main-container">
+      <nav class="side-menu">
+        <ul class="menu">
+          <li><a href="about.html">Was ist LernIA</a></li>
+          <li><a href="team.html">Unser Team</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="intro">
+          <div class="video-container">
+            <video id="intro-video" controls>
+              <source
+                src="frontend/assets/div/videoplayback.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>
+        &copy; <span id="current-year"></span> LernIA. Alle Rechte vorbehalten.
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById(
+        "current-year"
+      ).textContent = new Date().getFullYear();
+
+      function playVideo() {
+        const video = document.getElementById("intro-video");
+        video.play();
+      }
+    </script>
+  </body>
+</html>
