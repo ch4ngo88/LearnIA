@@ -247,3 +247,126 @@ footer {
   font-style: italic;
   color: #777;
 }
+
+/* Contact Page */
+#contact {
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto; /* Center the contact section */
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+.social-media img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.social-media img:hover {
+  transform: scale(1.1);
+}
+
+.contact-form {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+/* Impressum Page */
+#impressum {
+  text-align: left;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto; /* Center the impressum section */
+}
+
+#impressum p {
+  margin-bottom: 20px;
+}
+/* Login Page */
+#login {
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto; /* Center the login section */
+}
+
+.login-form {
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin: 10px 0 5px;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}

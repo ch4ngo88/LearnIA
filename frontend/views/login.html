@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="de" />
+    <meta name="language" content="en" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+      default-src 'self'; 
+      script-src 'self'; 
+      style-src 'self' 'unsafe-inline'; 
+      img-src 'self' data:; 
+      font-src 'self' data:; 
+      frame-src 'self'; 
+      child-src 'self';
+      connect-src 'self';"
+    />
+    <meta http-equiv="Permissions-Policy" content="usb=*, battery=*" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/ch4ngo88/LearnIA/main/frontend/assets/images/logo.png"
+    />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/sanitize.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Login - LearnIA</title>
+    <meta
+      name="description"
+      content="Intelligente, personalisierte Lernplattform"
+    />
+    <meta
+      name="keywords"
+      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning"
+    />
+    <meta
+      name="author"
+      content="Marco da Silva, Clara Rosenhahn, Sascha Kalnins, Stephanie Ong"
+    />
+    <link rel="canonical" href="https://github.com/ch4ngo88/LearnIA" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Login - LearnIA" />
+    <meta
+      property="og:description"
+      content="Intelligente, personalisierte Lernplattform"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="../assets/images/logo.png" alt="LernIA Logo" />
+        </div>
+      </div>
+    </header>
+
+    <div class="auth-buttons">
+      <form action="login.php" method="POST">
+        <button type="submit">Login</button>
+      </form>
+      <form action="register.php" method="POST">
+        <button type="submit">Registrierung</button>
+      </form>
+    </div>
+
+    <div class="main-container">
+      <nav class="side-menu">
+        <ul class="menu">
+          <li><a href="../../index.html">Startseite</a></li>
+          <li><a href="about.html">Über LearnIA</a></li>
+          <li><a href="team.html">Unser Team</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="login">
+          <h1>Login</h1>
+          <div class="login-form">
+            <form action="../controllers/login.php" method="POST">
+              <label for="username">Benutzername:</label>
+              <input type="text" id="username" name="username" required />
+              <label for="password">Passwort:</label>
+              <input type="password" id="password" name="password" required />
+              <button type="submit">Einloggen</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="language-selector">
+          <button class="flag-button">
+            <img
+              id="selected-flag"
+              src="../assets/images/de_flag.png"
+              alt="Deutsch"
+            />
+          </button>
+        </div>
+        <p>
+          &copy; <span id="current-year"></span> LernIA. Alle Rechte
+          vorbehalten.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById(
+        "current-year"
+      ).textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
