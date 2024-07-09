@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/sanitize.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <title>Unser Team - LearnIA</title>
+    <title>Über LearnIA</title>
     <meta
       name="description"
       content="Intelligente, personalisierte Lernplattform"
@@ -40,7 +40,7 @@
     />
     <link rel="canonical" href="https://github.com/ch4ngo88/LearnIA" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Unser Team - LearnIA" />
+    <meta property="og:title" content="Über LearnIA" />
     <meta
       property="og:description"
       content="Intelligente, personalisierte Lernplattform"
@@ -69,62 +69,57 @@
       <nav class="side-menu">
         <ul class="menu">
           <li><a href="../../index.html">Startseite</a></li>
-          <li><a href="info.html">Über LearnIA</a></li>
+          <li><a href="aboutus.html">Unser Team</a></li>
           <li><a href="contact.html">Kontakt</a></li>
           <li><a href="impressum.html">Impressum</a></li>
         </ul>
       </nav>
 
       <main>
-        <section id="team">
-          <h1>Unser Team</h1>
+        <section id="about">
+          <h1>Über LearnIA</h1>
+          <div class="about-image">
+            <img
+              src="../assets/images/about_learnia.webp"
+              alt="Über LearnIA Bild"
+            />
+          </div>
           <p>
-            Was als PHP-Projekt bei CBM während der Umschulung begonnen hat, hat
-            sich durch eine große Freundschaft zu einem leidenschaftlichen
-            Zusammenschluss entwickelt. So ist LearnIA entstanden.
+            LearnIA ist ein KI-basierter Lernassistent, der Ihnen hilft, Ihre
+            Lernziele effizient zu erreichen. Unsere Plattform nutzt
+            fortschrittliche künstliche Intelligenz, um den Lernprozess zu
+            optimieren, individuelle Lernpläne zu erstellen und das
+            Zeitmanagement zu verbessern.
           </p>
-
-          <div class="team-row">
-            <div class="team-member">
-              <img src="../assets/images/marco.jpg" alt="Marco da Silva" />
-              <h2>Marco da Silva</h2>
-              <p>Möchtegern Projektmanager</p>
-              <blockquote>
-                "Anwendungsentwickler mit einem Faber für AI"
-              </blockquote>
-            </div>
-
-            <div class="team-member">
-              <img src="../assets/images/sascha.jpg" alt="Sascha Kalnins" />
-              <h2>Sascha Kalnins</h2>
-              <p>KI Flüsterer</p>
-              <blockquote>"Der Mann fürs Grobe"</blockquote>
-            </div>
-          </div>
-
-          <div class="team-row">
-            <div class="team-member">
-              <img src="../assets/images/stephanie.jpg" alt="Stephanie Ong" />
-              <h2>Stephanie Ong</h2>
-              <p>
-                Chief Creative Officer, Mastermind of UI/UX & Frontend Design
-              </p>
-              <blockquote>
-                "Gestaltet intuitive und benutzerfreundliche Oberflächen mit
-                einer kreativen Note, Marathonläuferin und Ideenmaschine"
-              </blockquote>
-            </div>
-
-            <div class="team-member">
-              <img src="../assets/images/clara.jpg" alt="Clara Rosenhahn" />
-              <h2>Clara Rosenhahn</h2>
-              <p>FiSi Integratorin</p>
-              <blockquote>
-                "Die Kraft, die alles zusammenhält und die Herz und Seele des
-                Unternehmens"
-              </blockquote>
-            </div>
-          </div>
+          <h2>Hauptfunktionen von LearnIA:</h2>
+          <ul>
+            <li>
+              <strong>KI-basierter Lernassistent:</strong> Unterstützt Sie bei
+              der Planung und Organisation Ihres Lernens, hilft Ihnen, Deadlines
+              einzuhalten und bietet personalisierte Empfehlungen.
+            </li>
+            <li>
+              <strong>Zeitmanagement:</strong> Überwachen Sie Ihre Fortschritte
+              und erhalten Sie Erinnerungen an wichtige Termine und Fristen.
+            </li>
+            <li>
+              <strong>Interaktive Inhalte:</strong> Nutzen Sie interaktive
+              Videos, Quizze und Spiele, um Ihr Wissen zu vertiefen.
+            </li>
+            <li>
+              <strong>Community und Forum:</strong> Tauschen Sie sich in unserem
+              Forum mit anderen Lernenden über alle möglichen lernbezogenen
+              Themen aus.
+            </li>
+          </ul>
+          <h2>Unser Ziel:</h2>
+          <p>
+            Unser Ziel ist es, das Lernen durch den Einsatz modernster
+            Technologien effektiver und zugänglicher zu machen. Mit LearnIA
+            möchten wir Ihnen einen umfassenden Lernassistenten bieten, der
+            Ihnen bei allen Aspekten des Lernens zur Seite steht.
+          </p>
+          <br /><br /><br />
         </section>
       </main>
     </div>
@@ -151,6 +146,11 @@
       document.getElementById(
         "current-year"
       ).textContent = new Date().getFullYear();
+
+      function playVideo() {
+        const video = document.getElementById("intro-video");
+        video.play();
+      }
     </script>
   </body>
 </html>

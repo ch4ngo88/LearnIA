@@ -1,10 +1,11 @@
 <?php
 $host = 'localhost';
-$db = 'Learnia';
+$db = 'learnia';
 $user = 'root';
-$pass = '1234';
+$pass = '';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+$con=mysqli_connect($host, $user, $pw, $db);
 
 try {
     $pdo = new PDO($dsn, $user, $pass);

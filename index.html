@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="de" />
+    <meta name="language" content="en" />
     <meta
       http-equiv="Content-Security-Policy"
       content="
@@ -66,10 +68,10 @@
     <div class="main-container">
       <nav class="side-menu">
         <ul class="menu">
-          <li><a href="about.html">Was ist LernIA</a></li>
-          <li><a href="team.html">Unser Team</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="frontend/views/info.html">Über LearnIA</a></li>
+          <li><a href="frontend/views/aboutus.html">Unser Team</a></li>
+          <li><a href="frontend/views/contact.html">Kontakt</a></li>
+          <li><a href="frontend/views/impressum.html">Impressum</a></li>
         </ul>
       </nav>
 
@@ -89,9 +91,21 @@
     </div>
 
     <footer>
-      <p>
-        &copy; <span id="current-year"></span> LernIA. Alle Rechte vorbehalten.
-      </p>
+      <div class="footer-content">
+        <div class="language-selector">
+          <button class="flag-button">
+            <img
+              id="selected-flag"
+              src="frontend/assets/images/de_flag.png"
+              alt="Deutsch"
+            />
+          </button>
+        </div>
+        <p>
+          &copy; <span id="current-year"></span> LernIA. Alle Rechte
+          vorbehalten.
+        </p>
+      </div>
     </footer>
 
     <script>
