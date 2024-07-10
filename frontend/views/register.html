@@ -76,20 +76,19 @@
         <section id="login">
           <h1>Registrierung</h1>
           <div class="login-form">
-            <form action="../controllers/login.php" method="POST">
+            <form action="../controllers/register.php" method="POST">
               <label for="username">Benutzername:</label>
               <input type="text" id="username" name="username" required />
+
               <label for="email">E-Mail-Adresse:</label>
               <input type="email" id="email" name="email" required />
+
               <label for="password">Passwort:</label>
               <input type="password" id="password" name="password" required />
-              <label for="password">Passwort wiederholen:</label>
-              <input
-                type="password"
-                id="password"
-                name="confirm_password"
-                required
-              />
+
+              <label for="confirm_password">Passwort wiederholen:</label>
+              <input type="password" id="confirm_password" name="confirm_password" required/>
+                
               <button type="submit">Registrieren</button>
             </form>
           </div>
