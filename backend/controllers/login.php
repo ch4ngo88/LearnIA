@@ -1,40 +1,27 @@
 <?php
-require_once '../config/db.php';
 
-echo "droin";
-//   session_cache_expire(1);
-//   session_start();
-//   $usr=$_POST["username"];
-//   $pass=$_POST["password"];
-//   if($usr=="james" && $pass=="oo7"){
-//      $_SESSION["name"]=$usr;
-//      $_SESSION["uhrzeit"]=date("d.m.Y H:i:s");
-//      $_SESSION["eingeloggt"]=true;
-//      header("Location: sessSeite1b.php");
-//   }
-//   else
-//      header("Location: login.html");
+include ("C:xampp\htdocs\LearnIA\LearnIA\backend\config\dbconnect.php");
+
+$name="Peter";
+// $name=$_POST["username"];
+// $password=$_POST["password"];
+// $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
+    $sql = "SELECT name, password\n"
 
+    . "FROM `users` \n"
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     $username = $_POST['username'];
-//     $password = $_POST['password'];
+    . "WHERE name =\'$name\';";
+    $userd=mysqli_query($con,$sql);
+    var_dump($userd);
+    
 
-//     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-//     $stmt->bindParam(':username', $username);
-//     $stmt->execute();
+    // $sql="SELECT password \n"
+    // . "FROM `users` \n"
+    // . "WHERE name = \"$hashed_password\";";
+    // $erg=mysqli_query($con,$sql);
+    // echo $erg;
 
-//     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-//     if ($user && password_verify($password, $user['password'])) {
-//         session_start();
-//         $_SESSION['user_id'] = $user['id'];
-//         $_SESSION['username'] = $user['username'];
-//         echo "Login successful!";
-//     } else {
-//         echo "Login failed!";
-//     }
 
 ?>
