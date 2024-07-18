@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="de" />
+    <meta name="language" content="en" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self'; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://unpkg.com https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com https://www.google-analytics.com; 
+        style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; 
+        img-src 'self' data: https://raw.githubusercontent.com https://unpkg.com https://www.google-analytics.com https://errors.infinityfree.net https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net; 
+        font-src 'self' data: https://unpkg.com https://fonts.gstatic.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com; 
+        frame-src 'self' https://www.google.com https://recaptcha.google.com https://filemanager.ai https://php-myadmin.net; 
+        child-src 'self' https://www.google.com;
+        connect-src 'self' https://unpkg.com https://www.google-analytics.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net;"
+    />
+    <meta http-equiv="Permissions-Policy" content="usb=*, battery=*" />
+    <meta
+      property="og:image"
+      content="https://learn-ia.com/frontend/assets/images/logo.png"
+    />
+    <link rel="stylesheet" href="../../../frontend/css/normalize.css" />
+    <link rel="stylesheet" href="../../../frontend/css/sanitize.css" />
+    <link rel="stylesheet" href="../../../frontend/css/styles.css" />
+    <link rel="stylesheet" href="../../../frontend/css/menu.css" />
+    <title>LearnIA</title>
+    <meta
+      name="description"
+      content="Intelligente, personalisierte Lernplattform"
+    />
+    <meta
+      name="keywords"
+      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning, Individuelle Assistenz"
+    />
+    <meta
+      name="author"
+      content="Marco da Silva, Clara Rosenhahn, Sascha Kalnins, Stephanie Ong"
+    />
+    <link rel="canonical" href="https://www.learn-ia.com" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="LearnIA, Intelligente personalisierte Lernplattform - Lia"
+    />
+    <meta property="og:description" content="LearnIA" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      h1 {
+        color: #ffffff;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .flex-container {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      .robot-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .speech-bubble {
+        display: inline-block;
+        position: relative;
+        background: #ffffff;
+        border: 2px solid #00aabb;
+        border-radius: 5px;
+        padding: 10px;
+        color: #333;
+        margin-bottom: 10px;
+        max-width: 300px;
+        word-wrap: break-word;
+      }
+
+      .speech-bubble:after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 10px;
+        border-style: solid;
+        border-color: #ffffff transparent transparent transparent;
+      }
+
+      .question-button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .question-button:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+      }
+
+      .category-button {
+        background-color: #1eabd5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .category-button:hover {
+        background-color: #198ab3;
+        transform: scale(1.05);
+      }
+
+      .custom-question-container {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .custom-question-container input[type="text"] {
+        padding: 10px;
+        width: 80%;
+        max-width: 400px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .custom-question-container button {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .custom-question-container button:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="menu-bar">
+        <div class="auth-buttons">
+          <form action="../../../backend/controllers/logout.php" method="POST">
+            <button type="submit">Logout</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main class="flex-container">
+      <article>
+        <div class="question-section">
+          <h1>Frag Lia</h1>
+        </div>
+        <div class="category-container">
+          <button class="category-button" onclick="showQuestions('learnia')">
+            LearnIA
+          </button>
+          <button class="category-button" onclick="showQuestions('it')">
+            IT
+          </button>
+          <button class="category-button" onclick="showQuestions('lia')">
+            Lia
+          </button>
+        </div>
+        <div id="questions" style="display: block;">
+          <div id="learnia" class="question-container" style="display: none;">
+            <button class="question-button" onclick="showAnswer('learnia1')">
+              Was ist LearnIA?
+            </button>
+            <button class="question-button" onclick="showAnswer('learnia2')">
+              Wie funktioniert LearnIA?
+            </button>
+            <button class="question-button" onclick="showAnswer('learnia3')">
+              Welche Funktionen bietet LearnIA?
+            </button>
+          </div>
+          <div id="it" class="question-container" style="display: none;">
+            <button class="question-button" onclick="showAnswer('it1')">
+              Was ist ein Algorithmus?
+            </button>
+            <button class="question-button" onclick="showAnswer('it2')">
+              Was bedeutet HTTP?
+            </button>
+            <button class="question-button" onclick="showAnswer('it3')">
+              Was ist ein Array?
+            </button>
+          </div>
+          <div id="lia" class="question-container" style="display: none;">
+            <button class="question-button" onclick="showAnswer('lia1')">
+              Wer bist du?
+            </button>
+            <button class="question-button" onclick="showAnswer('lia2')">
+              Was kannst du?
+            </button>
+            <button class="question-button" onclick="showAnswer('lia3')">
+              Was ist deine Aufgabe?
+            </button>
+          </div>
+        </div>
+        <div class="robot-container">
+          <div class="speech-bubble" id="speechBubble">
+            Hallo! Wie kann ich dir helfen?
+          </div>
+          <img src="../../assets/images/lia1.png" alt="Lia" class="lia" />
+        </div>
+        <div class="custom-question-container">
+          <input
+            type="text"
+            id="customQuestion"
+            placeholder="Stelle deine Frage hier"
+          />
+          <button onclick="handleCustomQuestion()">Senden</button>
+        </div>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <form action="frontpage.php">
+          <button type="submit" class="question-button">Zurück</button>
+        </form>
+      </article>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <p>
+          &copy; <span id="current-year"></span> LearnIA. Alle Rechte
+          vorbehalten.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById(
+        "current-year"
+      ).textContent = new Date().getFullYear();
+
+      function showQuestions(category) {
+        document.getElementById("questions").style.display = "block";
+        document
+          .querySelectorAll(".question-container")
+          .forEach((container) => {
+            container.style.display = "none";
+          });
+        document.getElementById(category).style.display = "block";
+      }
+
+      function showAnswer(questionId) {
+        let answers = {
+          learnia1:
+            "LearnIA ist eine intelligente, personalisierte Lernplattform.",
+          learnia2:
+            "LearnIA funktioniert durch die Nutzung von KI, um personalisierte Lernpfade zu erstellen.",
+          learnia3:
+            "LearnIA bietet Funktionen wie Quizze, Lernmodule und individuelle Fortschrittsverfolgung.",
+          it1:
+            "Ein Algorithmus ist eine Schritt-für-Schritt-Anleitung zur Lösung eines Problems.",
+          it2:
+            "HTTP steht für Hypertext Transfer Protocol und ist das grundlegende Protokoll des Webs.",
+          it3:
+            "Ein Array ist eine Sammlung von Elementen, die durch Indizes zugänglich sind.",
+          lia1: "Ich bin Lia, dein persönlicher Lernassistent.",
+          lia2:
+            "Ich kann dir helfen, Antworten auf deine Fragen zu finden und dich durch die Plattform zu navigieren.",
+          lia3:
+            "Meine Aufgabe ist es, dir das Lernen zu erleichtern und dich zu unterstützen.",
+        };
+        document.getElementById("speechBubble").innerText = answers[questionId];
+        document.querySelector(".lia").src = "../../assets/images/lia2.png";
+      }
+
+      let responseToggle = true;
+
+      function handleCustomQuestion() {
+        let customQuestion = document.getElementById("customQuestion").value;
+        if (customQuestion.trim() !== "") {
+          if (responseToggle) {
+            document.getElementById("speechBubble").innerText =
+              "Leider kann ich noch nicht direkt auf deine Fragen antworten, aber ich lerne es bestimmt bald!!";
+          } else {
+            document.getElementById("speechBubble").innerText =
+              "Versuche es später noch einmal.";
+          }
+          responseToggle = !responseToggle;
+          document.getElementById("customQuestion").value = "";
+          document.querySelector(".lia").src = "../../assets/images/lia2.png";
+        }
+      }
+
+      document
+        .getElementById("customQuestion")
+        .addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            handleCustomQuestion();
+          }
+        });
+    </script>
+  </body>
+</html>

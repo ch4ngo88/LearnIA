@@ -51,8 +51,13 @@
         font-weight: bold;
         color: #007bff;
       }
+      main img {
+        max-width: 120%;
+        height: auto;
+      }
     </style>
   </head>
+
   <body>
     <header>
       <div class="container">
@@ -63,38 +68,37 @@
         </div>
       </div>
     </header>
+
     <div class="auth-buttons">
       <a href="login.html"><button>Login</button></a>
       <a href="register.html"><button>Registrierung</button></a>
     </div>
+
     <div class="main-container">
       <nav class="side-menu">
         <ul class="menu">
           <li><a href="../../index.html">Startseite</a></li>
           <li><a href="info.html">Mission</a></li>
-          <li><a href="moral.html">Unsere Methode</a></li>
+          <li class="active"><a href="moral.html">Unsere Methode</a></li>
           <li><a href="zusatz.html">Produkte</a></li>
           <li><a href="aboutus.html">Unser Team</a></li>
           <li><a href="contact.html">Kontakt</a></li>
           <li><a href="impressum.html">Impressum</a></li>
         </ul>
       </nav>
+
       <main>
-        <section id="login">
-          <h1>Login</h1>
-          <div class="login-form">
-            <form action="../../backend/controllers/login.php" method="POST">
-              <label for="username">Benutzername:</label>
-              <input type="text" id="username" name="username" required />
-              <label for="password">Passwort:</label>
-              <input type="password" id="password" name="password" required />
-              <button type="submit">Einloggen</button>
-              <p><a href="forgot_password.html">Passwort vergessen?</a></p>
-            </form>
-          </div>
-        </section>
+        <img
+          src="../assets/images/Die Idee hinter LearnIA.jpg"
+          alt="Unsere Methode"
+        />
+        <div><br /><br /></div>
+        <img src="../assets/images/Unsere Methode.jpg" alt="Unsere Methode" />
+        <div></div>
+        <br /><br />
       </main>
     </div>
+
     <footer>
       <div class="footer-content">
         <div class="language-selector">
@@ -112,6 +116,7 @@
         </p>
       </div>
     </footer>
+
     <script>
       document.getElementById(
         "current-year"

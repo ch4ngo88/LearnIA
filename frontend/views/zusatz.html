@@ -51,8 +51,37 @@
         font-weight: bold;
         color: #007bff;
       }
+      .accordion {
+        width: 100%;
+        cursor: pointer;
+        padding: 18px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        background-color: #f1f9ff;
+        color: #333;
+        text-align: center;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      .accordion:hover {
+        background-color: #d1ebff;
+      }
+      .accordion.active {
+        transform: scale(1.05);
+        background-color: #c1e1ff;
+      }
+      .accordion-content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+      }
+      .accordion-content p {
+        padding: 18px;
+      }
     </style>
   </head>
+
   <body>
     <header>
       <div class="container">
@@ -63,38 +92,91 @@
         </div>
       </div>
     </header>
+
     <div class="auth-buttons">
       <a href="login.html"><button>Login</button></a>
       <a href="register.html"><button>Registrierung</button></a>
     </div>
+
     <div class="main-container">
       <nav class="side-menu">
         <ul class="menu">
           <li><a href="../../index.html">Startseite</a></li>
           <li><a href="info.html">Mission</a></li>
           <li><a href="moral.html">Unsere Methode</a></li>
-          <li><a href="zusatz.html">Produkte</a></li>
+          <li class="active"><a href="zusatz.html">Produkte</a></li>
           <li><a href="aboutus.html">Unser Team</a></li>
           <li><a href="contact.html">Kontakt</a></li>
           <li><a href="impressum.html">Impressum</a></li>
         </ul>
       </nav>
+
       <main>
-        <section id="login">
-          <h1>Login</h1>
-          <div class="login-form">
-            <form action="../../backend/controllers/login.php" method="POST">
-              <label for="username">Benutzername:</label>
-              <input type="text" id="username" name="username" required />
-              <label for="password">Passwort:</label>
-              <input type="password" id="password" name="password" required />
-              <button type="submit">Einloggen</button>
-              <p><a href="forgot_password.html">Passwort vergessen?</a></p>
-            </form>
+        <section id="zusatz">
+          <h1>Abo Modelle</h1>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            Schüler
+          </div>
+          <div class="accordion-content">
+            <p>Kostenfrei, werbefinanziert bis 1GB</p>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            Studenten
+          </div>
+          <div class="accordion-content">
+            <p>Kostenfrei, werbefinanziert bis 1GB</p>
+            <p>Premium Modell:</p>
+            <p>Monatlich: €7,99</p>
+            <p>Jährlich: €59,99</p>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            Bildungsträger
+          </div>
+          <div class="accordion-content">
+            <p>Bildungslizenz Basispreis pro Jahr €129</p>
+            <p>10TB Speicher auf Server</p>
+            <p>
+              Kostenübernahme pro Schüler – Bis 100 Schüler: €2,99 / Schüler /
+              Monat (1TB / Schüler)
+            </p>
+            <p>&gt; 100 Schüler: €1,99 / Schüler / Monat (1GB / Schüler)</p>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            Selbstständige
+          </div>
+          <div class="accordion-content">
+            <p>Abo Modell in Stufen</p>
+            <p>Mitarbeiterpakete:</p>
+            <p>&lt; 5: 10TB</p>
+            <p>Monatlich: €9,99</p>
+            <p>Jährlich: €99,99</p>
+            <p>&lt; 10: 30TB</p>
+            <p>Monatlich: €19,99</p>
+            <p>Jährlich: €159,99</p>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            Unternehmen
+          </div>
+          <div class="accordion-content">
+            <p>Abo Modell in Stufen</p>
+            <p>Kauf Modell mit kompletter Server Miete</p>
+            <p>Basispreis min. 30TB: €249,00</p>
+            <p>ODER</p>
+            <p>Server Miete (für Einzelloser): €38,00</p>
+            <p>Jede weitere 10TB: €29,90</p>
+            <p>Kostenübernahme pro Mitarbeiter</p>
+            <p>Monatlich: €9,99</p>
+            <p>Jährlich: €98,00</p>
           </div>
         </section>
       </main>
     </div>
+
     <footer>
       <div class="footer-content">
         <div class="language-selector">
@@ -112,6 +194,7 @@
         </p>
       </div>
     </footer>
+
     <script>
       document.getElementById(
         "current-year"
@@ -123,6 +206,23 @@
           link.parentElement.classList.add("active");
         }
       });
+
+      function toggleAccordion(element) {
+        const activeAccordions = document.querySelectorAll(".accordion.active");
+        activeAccordions.forEach((acc) => {
+          if (acc !== element) {
+            acc.classList.remove("active");
+            acc.nextElementSibling.style.display = "none";
+          }
+        });
+        element.classList.toggle("active");
+        var content = element.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      }
     </script>
   </body>
 </html>

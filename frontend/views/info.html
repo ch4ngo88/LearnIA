@@ -8,50 +8,66 @@
     <meta
       http-equiv="Content-Security-Policy"
       content="
-      default-src 'self'; 
-      script-src 'self'; 
-      style-src 'self' 'unsafe-inline'; 
-      img-src 'self' data:; 
-      font-src 'self' data:; 
-      frame-src 'self'; 
-      child-src 'self';
-      connect-src 'self';"
+        default-src 'self'; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://unpkg.com https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com https://www.google-analytics.com; 
+        style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; 
+        img-src 'self' data: https://raw.githubusercontent.com https://unpkg.com https://www.google-analytics.com https://errors.infinityfree.net https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net; 
+        font-src 'self' data: https://unpkg.com https://fonts.gstatic.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com; 
+        frame-src 'self' https://www.google.com https://recaptcha.google.com https://filemanager.ai https://php-myadmin.net; 
+        child-src 'self' https://www.google.com;
+        connect-src 'self' https://unpkg.com https://www.google-analytics.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net;"
     />
     <meta http-equiv="Permissions-Policy" content="usb=*, battery=*" />
     <meta
       property="og:image"
-      content="https://raw.githubusercontent.com/ch4ngo88/LearnIA/main/frontend/assets/images/logo.png"
+      content="https://learn-ia.com/frontend/assets/images/logo.png"
     />
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/sanitize.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <title>Über LearnIA</title>
+    <link rel="stylesheet" href="../../frontend/css/normalize.css" />
+    <link rel="stylesheet" href="../../frontend/css/sanitize.css" />
+    <link rel="stylesheet" href="../../frontend/css/styles.css" />
+    <title>LearnIA</title>
     <meta
       name="description"
       content="Intelligente, personalisierte Lernplattform"
     />
     <meta
       name="keywords"
-      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning"
+      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning, Individuelle Assistenz"
     />
     <meta
       name="author"
       content="Marco da Silva, Clara Rosenhahn, Sascha Kalnins, Stephanie Ong"
     />
-    <link rel="canonical" href="https://github.com/ch4ngo88/LearnIA" />
+    <link rel="canonical" href="https://www.learn-ia.com" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Über LearnIA" />
     <meta
-      property="og:description"
-      content="Intelligente, personalisierte Lernplattform"
+      property="og:title"
+      content="LearnIA, Intelligente personalisierte Lernplattform - Lia"
     />
+    <meta property="og:description" content="LearnIA" />
+
+    <style>
+      .menu li.active > a {
+        font-weight: bold;
+        color: #007bff;
+      }
+      .diagramm img {
+        max-width: 75%;
+        height: auto;
+      }
+      main {
+        text-align: justify;
+      }
+    </style>
   </head>
 
   <body>
     <header>
       <div class="container">
         <div class="logo">
-          <img src="../assets/images/logo.png" alt="LernIA Logo" />
+          <a href="../../index.html"
+            ><img src="../assets/images/logo.png" alt="LearnIA Logo"
+          /></a>
         </div>
       </div>
     </header>
@@ -65,6 +81,9 @@
       <nav class="side-menu">
         <ul class="menu">
           <li><a href="../../index.html">Startseite</a></li>
+          <li class="active"><a href="info.html">Mission</a></li>
+          <li><a href="moral.html">Unsere Methode</a></li>
+          <li><a href="zusatz.html">Produkte</a></li>
           <li><a href="aboutus.html">Unser Team</a></li>
           <li><a href="contact.html">Kontakt</a></li>
           <li><a href="impressum.html">Impressum</a></li>
@@ -73,50 +92,73 @@
 
       <main>
         <section id="about">
-          <h1>Über LearnIA</h1>
-          <div class="about-image">
+          <h1>Unsere Mission</h1>
+          <p>
+            Unsere Mission besteht darin, jedem Menschen, egal in welchem Alter,
+            mit welchem Bildungsstand oder Lernstil Zugang zum bestmöglichen
+            Lernerlebnis zu ermöglichen. Die Idee dahinter ist, dass wir Dich
+            von sämtlichen Lernhürden befreien wollen, damit Du Dich voll und
+            ganz auf das Lernen konzentrieren kannst. Mit Hilfe eines
+            personalisierten, automatisierten KI-gesteuerten
+            Lernmanagementsystems gestalten wir einen auf Deine Bedürfnisse
+            zugeschnittenen Weg, um Deine Lernziele mit Freude zu erreichen.
+          </p>
+          <h2>Häufigste Lernhürden</h2>
+          <p>
+            Um genau diese häufigen Lernhürden zu überwinden, haben wir uns
+            etwas ganz Besonderes ausgedacht – LearnIA, Dein personalisiertes
+            KI-gesteuertes Lernmanagementsystem, das auf Deine Bedürfnisse
+            zugeschnitten ist. LearnIA wird Dir helfen, Deine bestehenden
+            Lernhürden zu identifizieren und anhand dessen passende Lernpläne
+            und -methoden zu erstellen.
+          </p>
+          <div class="diagramm">
+            <img src="../assets/images/Lernhürden.jpg" alt="Diagramm" />
+          </div>
+          <h2>Lernen im Fokus</h2>
+          <p>
+            Bestimmt kennst Du dieses Gefühl: Du willst für Deine nächste
+            Klausur lernen oder eine Hausarbeit schreiben und weißt gar nicht so
+            recht, wo Du anfangen sollst. Denn vor Dir siehst Du nur einen
+            großen Berg an Aufgaben, Abgabefristen und evtl. mangelnder
+            Struktur. In unserer modernen Lernwelt werden wir oft mit Input
+            verschiedenster Formate überstimuliert, während wir selbst
+            versuchen, mit unterschiedlichen Lernhürden umzugehen. Das kann am
+            Ende dazu führen, dass wir zu viel Zeit und Energie damit
+            verschwenden, Ordnung und Struktur zu finden, um überhaupt erst
+            loslegen zu können. Mit Hilfe von LearnIA steht das Lernen im
+            Mittelpunkt. Anhand von personalisierten Lernplänen und -ressourcen
+            möchten wir Dir helfen, diese Hürden zu überwinden, damit Du Deine
+            Lernziele erfolgreich und mit Freude erreichen kannst.
+          </p>
+          <h2>Personalisiertes Lernen</h2>
+          <p>
+            Gemeinsam gestalten wir Deinen personalisierten Weg zum Lernerfolg
+            frei von unnötigen Ablenkungen und konzentrieren uns auf das
+            Wesentliche – das Lernen. Jeder Mensch hat seinen eigenen Lernstil
+            und genau darauf baut unser personalisiertes Lernmanagementsystem
+            auf.
+          </p>
+          <div class="diagramm">
             <img
-              src="../assets/images/about_learnia.webp"
-              alt="Über LearnIA Bild"
+              src="../assets/images/Personalisiertes Lernen.jpg"
+              alt="Diagramm"
             />
           </div>
+          <h2>Zeitmanagement</h2>
           <p>
-            LearnIA ist ein KI-basierter Lernassistent, der Ihnen hilft, Ihre
-            Lernziele effizient zu erreichen. Unsere Plattform nutzt
-            fortschrittliche künstliche Intelligenz, um den Lernprozess zu
-            optimieren, individuelle Lernpläne zu erstellen und das
-            Zeitmanagement zu verbessern.
+            Stell Dir vor, Du brauchst Dir keine Abgabefristen oder
+            Prüfungstermine mehr zu merken oder abzurufen und musst Dir auch
+            keine Gedanken machen, wie viel Zeit Du noch bis zur Abgabe oder der
+            großen Prüfung hast. Denn genau das ist das Herzstück unseres
+            Lernmanagementsystems - ein intelligenter KI-gesteuerter Kalender,
+            in den Du alle wichtigen lernrelevanten Termine einträgst und
+            anschließend basierend auf Deinem Wissensstand und Lerntempo einen
+            individualisierten Zeitplan bekommst, der sich kontinuierlich
+            aktualisiert und Deine Termine im Auge behält.
           </p>
-          <h2>Hauptfunktionen von LearnIA:</h2>
-          <ul>
-            <li>
-              <strong>KI-basierter Lernassistent:</strong> Unterstützt Sie bei
-              der Planung und Organisation Ihres Lernens, hilft Ihnen, Deadlines
-              einzuhalten und bietet personalisierte Empfehlungen.
-            </li>
-            <li>
-              <strong>Zeitmanagement:</strong> Überwachen Sie Ihre Fortschritte
-              und erhalten Sie Erinnerungen an wichtige Termine und Fristen.
-            </li>
-            <li>
-              <strong>Interaktive Inhalte:</strong> Nutzen Sie interaktive
-              Videos, Quizze und Spiele, um Ihr Wissen zu vertiefen.
-            </li>
-            <li>
-              <strong>Community und Forum:</strong> Tauschen Sie sich in unserem
-              Forum mit anderen Lernenden über alle möglichen lernbezogenen
-              Themen aus.
-            </li>
-          </ul>
-          <h2>Unser Ziel:</h2>
-          <p>
-            Unser Ziel ist es, das Lernen durch den Einsatz modernster
-            Technologien effektiver und zugänglicher zu machen. Mit LearnIA
-            möchten wir Ihnen einen umfassenden Lernassistenten bieten, der
-            Ihnen bei allen Aspekten des Lernens zur Seite steht.
-          </p>
-          <br /><br /><br />
         </section>
+        <br /><br />
       </main>
     </div>
 
@@ -132,7 +174,7 @@
           </button>
         </div>
         <p>
-          &copy; <span id="current-year"></span> LernIA. Alle Rechte
+          &copy; <span id="current-year"></span> LearnIA. Alle Rechte
           vorbehalten.
         </p>
       </div>
@@ -143,10 +185,12 @@
         "current-year"
       ).textContent = new Date().getFullYear();
 
-      function playVideo() {
-        const video = document.getElementById("intro-video");
-        video.play();
-      }
+      // Markiere die aktive Seite im Menü
+      document.querySelectorAll(".menu a").forEach((link) => {
+        if (link.href === window.location.href) {
+          link.parentElement.classList.add("active");
+        }
+      });
     </script>
   </body>
 </html>

@@ -8,50 +8,87 @@
     <meta
       http-equiv="Content-Security-Policy"
       content="
-      default-src 'self'; 
-      script-src 'self'; 
-      style-src 'self' 'unsafe-inline'; 
-      img-src 'self' data:; 
-      font-src 'self' data:; 
-      frame-src 'self'; 
-      child-src 'self';
-      connect-src 'self';"
+        default-src 'self'; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://unpkg.com https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com https://www.google-analytics.com; 
+        style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; 
+        img-src 'self' data: https://raw.githubusercontent.com https://unpkg.com https://www.google-analytics.com https://errors.infinityfree.net https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net; 
+        font-src 'self' data: https://unpkg.com https://fonts.gstatic.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com; 
+        frame-src 'self' https://www.google.com https://recaptcha.google.com https://filemanager.ai https://php-myadmin.net; 
+        child-src 'self' https://www.google.com;
+        connect-src 'self' https://unpkg.com https://www.google-analytics.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net;"
     />
     <meta http-equiv="Permissions-Policy" content="usb=*, battery=*" />
     <meta
       property="og:image"
-      content="https://raw.githubusercontent.com/ch4ngo88/LearnIA/main/frontend/assets/images/logo.png"
+      content="https://learn-ia.com/frontend/assets/images/logo.png"
     />
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/sanitize.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <title>Login - LearnIA</title>
+    <link rel="stylesheet" href="../../frontend/css/normalize.css" />
+    <link rel="stylesheet" href="../../frontend/css/sanitize.css" />
+    <link rel="stylesheet" href="../../frontend/css/styles.css" />
+    <title>LearnIA</title>
     <meta
       name="description"
       content="Intelligente, personalisierte Lernplattform"
     />
     <meta
       name="keywords"
-      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning"
+      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning, Individuelle Assistenz"
     />
     <meta
       name="author"
       content="Marco da Silva, Clara Rosenhahn, Sascha Kalnins, Stephanie Ong"
     />
-    <link rel="canonical" href="https://github.com/ch4ngo88/LearnIA" />
+    <link rel="canonical" href="https://www.learn-ia.com" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Login - LearnIA" />
     <meta
-      property="og:description"
-      content="Intelligente, personalisierte Lernplattform"
+      property="og:title"
+      content="LearnIA, Intelligente personalisierte Lernplattform - Lia"
     />
-  </head>
+    <meta property="og:description" content="LearnIA" />
 
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lew4BEqAAAAAJKRBKjk-XTyTjz6HJxtWDbFMnlm"></script>
+    <style>
+      .menu li.active > a {
+        font-weight: bold;
+        color: #007bff;
+      }
+      #loading {
+        display: none; /* Ladebalken standardmäßig ausblenden */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      }
+      #loading .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
   <body>
     <header>
       <div class="container">
         <div class="logo">
-          <img src="../assets/images/logo.png" alt="LernIA Logo" />
+          <a href="../../index.html"
+            ><img src="../assets/images/logo.png" alt="LearnIA Logo"
+          /></a>
         </div>
       </div>
     </header>
@@ -65,7 +102,9 @@
       <nav class="side-menu">
         <ul class="menu">
           <li><a href="../../index.html">Startseite</a></li>
-          <li><a href="info.html">Über LearnIA</a></li>
+          <li><a href="info.html">Mission</a></li>
+          <li><a href="moral.html">Unsere Methode</a></li>
+          <li><a href="zusatz.html">Produkte</a></li>
           <li><a href="team.html">Unser Team</a></li>
           <li><a href="contact.html">Kontakt</a></li>
           <li><a href="impressum.html">Impressum</a></li>
@@ -74,30 +113,55 @@
 
       <main>
         <section id="login">
-          <h1>Registrierung</h1>
+          <h1>Registrieren</h1>
           <div class="login-form">
-            <form action="/LearnIA/LearnIA/backend/controllers/register.php" method="POST">
+            <form
+              id="registrationForm"
+              action="../../backend/controllers/register.php"
+              method="POST"
+            >
               <label for="username">Benutzername:</label>
               <input type="text" id="username" name="username" required />
-              <!-- <input type="text" id="username" name="username" required value="Sascha" /> -->
 
               <label for="email">E-Mail-Adresse:</label>
               <input type="email" id="email" name="email" required />
-              <!-- <input type="email" id="email" name="email" required value="test@test.com" /> -->
 
               <label for="password">Passwort:</label>
-              <input type="password" id="password" name="password" required />
-              <!-- <input type="password" id="password" name="password" required value="1234" /> -->
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+                title="Das Passwort muss mindestens 8 Zeichen lang sein und mindestens einen Großbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten."
+              />
 
               <label for="confirm_password">Passwort wiederholen:</label>
-              <input type="password" id="confirm_password" name="confirm_password" required/>
-              <!-- <input type="password" id="confirm_password" name="confirm_password" required value="1234"/> -->
+              <input
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                required
+              />
+
+              <input
+                type="hidden"
+                id="g-recaptcha-response"
+                name="g-recaptcha-response"
+              />
 
               <button type="submit">Registrieren</button>
             </form>
+            <div id="error-messages">
+              <!-- Fehlermeldungen werden hier eingefügt -->
+            </div>
           </div>
         </section>
       </main>
+    </div>
+
+    <div id="loading">
+      <div class="loader"></div>
     </div>
 
     <footer>
@@ -112,7 +176,7 @@
           </button>
         </div>
         <p>
-          &copy; <span id="current-year"></span> LernIA. Alle Rechte
+          &copy; <span id="current-year"></span> LearnIA. Alle Rechte
           vorbehalten.
         </p>
       </div>
@@ -122,6 +186,43 @@
       document.getElementById(
         "current-year"
       ).textContent = new Date().getFullYear();
+
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          var errorMessages = document.getElementById("error-messages");
+          errorMessages.innerHTML = ""; // Fehlermeldungen zurücksetzen
+
+          // Validierung der Formulardaten
+          var password = document.getElementById("password").value;
+          var confirmPassword = document.getElementById("confirm_password")
+            .value;
+
+          if (password !== confirmPassword) {
+            e.preventDefault();
+            var error = document.createElement("p");
+            error.textContent = "Passwörter stimmen nicht überein.";
+            errorMessages.appendChild(error);
+          } else {
+            e.preventDefault();
+            grecaptcha.enterprise.ready(async () => {
+              const token = await grecaptcha.enterprise.execute(
+                "6Lew4BEqAAAAAJKRBKjk-XTyTjz6HJxtWDbFMnlm",
+                { action: "submit" }
+              );
+              document.getElementById("g-recaptcha-response").value = token;
+              this.submit();
+            });
+            document.getElementById("loading").style.display = "flex";
+          }
+        });
+
+      // Markiere die aktive Seite im Menü
+      document.querySelectorAll(".menu a").forEach((link) => {
+        if (link.href === window.location.href) {
+          link.parentElement.classList.add("active");
+        }
+      });
     </script>
   </body>
 </html>

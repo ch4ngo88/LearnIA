@@ -8,51 +8,66 @@
     <meta
       http-equiv="Content-Security-Policy"
       content="
-      default-src 'self'; 
-      script-src 'self'; 
-      style-src 'self' 'unsafe-inline'; 
-      img-src 'self' data:; 
-      font-src 'self' data:; 
-      frame-src 'self'; 
-      child-src 'self';
-      connect-src 'self';"
+        default-src 'self'; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://unpkg.com https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com https://www.google-analytics.com; 
+        style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; 
+        img-src 'self' data: https://raw.githubusercontent.com https://unpkg.com https://www.google-analytics.com https://errors.infinityfree.net https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net; 
+        font-src 'self' data: https://unpkg.com https://fonts.gstatic.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com; 
+        frame-src 'self' https://www.google.com https://recaptcha.google.com https://filemanager.ai https://php-myadmin.net; 
+        child-src 'self' https://www.google.com;
+        connect-src 'self' https://unpkg.com https://www.google-analytics.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net;"
     />
     <meta http-equiv="Permissions-Policy" content="usb=*, battery=*" />
     <meta
       property="og:image"
-      content="https://raw.githubusercontent.com/ch4ngo88/LearnIA/main/frontend/assets/images/logo.png"
+      content="https://learn-ia.com/frontend/assets/images/logo.png"
     />
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/sanitize.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <title>Kontakt - LearnIA</title>
+    <link rel="stylesheet" href="../../frontend/css/normalize.css" />
+    <link rel="stylesheet" href="../../frontend/css/sanitize.css" />
+    <link rel="stylesheet" href="../../frontend/css/styles.css" />
+    <title>LearnIA</title>
     <meta
       name="description"
       content="Intelligente, personalisierte Lernplattform"
     />
     <meta
       name="keywords"
-      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning"
+      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning, Individuelle Assistenz"
     />
     <meta
       name="author"
       content="Marco da Silva, Clara Rosenhahn, Sascha Kalnins, Stephanie Ong"
     />
-    <link rel="canonical" href="https://github.com/ch4ngo88/LearnIA" />
+    <link rel="canonical" href="https://www.learn-ia.com" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Kontakt - LearnIA" />
     <meta
-      property="og:description"
-      content="Intelligente, personalisierte Lernplattform"
+      property="og:title"
+      content="LearnIA, Intelligente personalisierte Lernplattform - Lia"
     />
-    <script src="https://www.google.com/recaptcha/api.js?render=6Len-gsqAAAAAFAXbcRuvIWSf_5cTDBRyioThfl7"></script>
-  </head>
+    <meta property="og:description" content="LearnIA" />
 
+    <style>
+      .menu li.active > a {
+        font-weight: bold;
+        color: #007bff;
+      }
+      .social-media {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .social-media a {
+        margin: 0 10px;
+      }
+    </style>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lew4BEqAAAAAJKRBKjk-XTyTjz6HJxtWDbFMnlm"></script>
+  </head>
   <body>
     <header>
       <div class="container">
         <div class="logo">
-          <img src="../assets/images/logo.png" alt="LernIA Logo" />
+          <a href="../../index.html"
+            ><img src="../assets/images/logo.png" alt="LearnIA Logo"
+          /></a>
         </div>
       </div>
     </header>
@@ -66,15 +81,17 @@
       <nav class="side-menu">
         <ul class="menu">
           <li><a href="../../index.html">Startseite</a></li>
-          <li><a href="info.html">Über LearnIA</a></li>
+          <li><a href="info.html">Mission</a></li>
+          <li><a href="moral.html">Unsere Methode</a></li>
+          <li><a href="zusatz.html">Produkte</a></li>
           <li><a href="aboutus.html">Unser Team</a></li>
+          <li class="active"><a href="contact.html">Kontakt</a></li>
           <li><a href="impressum.html">Impressum</a></li>
         </ul>
       </nav>
 
       <main>
         <section id="contact">
-          <h1>Kontakt</h1>
           <div class="social-media">
             <a href="https://www.facebook.com" target="_blank">
               <img src="../assets/images/facebook.png" alt="Facebook" />
@@ -82,10 +99,20 @@
             <a href="https://www.instagram.com" target="_blank">
               <img src="../assets/images/instagram.jpg" alt="Instagram" />
             </a>
-            <a href="https://www.youtube.com" target="_blank">
+            <a
+              href="https://www.youtube.com/channel/UCad35s6HCy12Sbso2awqVZQ"
+              target="_blank"
+            >
               <img src="../assets/images/Youtube.jpg" alt="YouTube" />
             </a>
           </div>
+          <div><p>Besuchen Sie uns auf unseren Social Media Kanälen.</p></div>
+          <h1>Kontakt</h1>
+          <p>
+            Bei Fragen oder Anliegen schreiben Sie uns bitte über das folgende
+            Formular oder wenden Sie sich direkt an unseren Support unter
+            <a href="mailto:info@learn-ia.com">info@learn-ia.com</a>.
+          </p>
           <div class="contact-form">
             <form
               action="../../backend/controllers/contact_form.php"
@@ -114,6 +141,7 @@
         </section>
       </main>
     </div>
+    <br /><br /><br />
 
     <footer>
       <div class="footer-content">
@@ -127,7 +155,7 @@
           </button>
         </div>
         <p>
-          &copy; <span id="current-year"></span> LernIA. Alle Rechte
+          &copy; <span id="current-year"></span> LearnIA. Alle Rechte
           vorbehalten.
         </p>
       </div>
@@ -138,14 +166,25 @@
         "current-year"
       ).textContent = new Date().getFullYear();
 
-      grecaptcha.ready(function () {
-        grecaptcha
-          .execute("6Len-gsqAAAAAFAXbcRuvIWSf_5cTDBRyioThfl7", {
-            action: "submit",
-          })
-          .then(function (token) {
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute(
+              "6Lew4BEqAAAAAJKRBKjk-XTyTjz6HJxtWDbFMnlm",
+              { action: "submit" }
+            );
             document.getElementById("g-recaptcha-response").value = token;
+            this.submit();
           });
+        });
+
+      // Markiere die aktive Seite im Menü
+      document.querySelectorAll(".menu a").forEach((link) => {
+        if (link.href === window.location.href) {
+          link.parentElement.classList.add("active");
+        }
       });
     </script>
   </body>
