@@ -1,118 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="de">
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="language" content="de" />
-    <meta name="language" content="en" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="
-            default-src 'self'; 
-            script-src 'self'; 
-            style-src 'self' 'unsafe-inline'; 
-            img-src 'self' data:; 
-            font-src 'self' data:; 
-            frame-src 'self'; 
-            child-src 'self';
-            connect-src 'self';"
-    />
-    <meta http-equiv="Permissions-Policy" content="usb=*, battery=*" />
-    <meta
-      property="og:image"
-      content="https://raw.githubusercontent.com/ch4ngo88/LearnIA/main/frontend/assets/images/logo.png"
-    />
-    <link rel="stylesheet" href="frontend/css/normalize.css" />
-    <link rel="stylesheet" href="frontend/css/sanitize.css" />
-    <link rel="stylesheet" href="frontend/css/styles.css" />
-    <title>LernIA</title>
-    <meta
-      name="description"
-      content="Intelligente, personalisierte Lernplattform"
-    />
-    <meta
-      name="keywords"
-      content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning"
-    />
-    <meta
-      name="author"
-      content="Marco da Silva, Clara Rosenhahn, Sascha Kalnins, Stephanie Ong"
-    />
-    <link rel="canonical" href="https://github.com/ch4ngo88/LearnIA" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="LernIA" />
-    <meta
-      property="og:description"
-      content="Intelligente, personalisierte Lernplattform"
-    />
-  </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="language" content="de" />
+<meta name="language" content="en" />
+<meta
+  http-equiv="Content-Security-Policy"
+  content="
+    default-src 'self'; 
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://unpkg.com https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com https://www.google-analytics.com; 
+    style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; 
+    img-src 'self' data: https://raw.githubusercontent.com https://unpkg.com https://www.google-analytics.com https://errors.infinityfree.net https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net; 
+    font-src 'self' data: https://unpkg.com https://fonts.gstatic.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com; 
+    frame-src 'self' https://www.google.com https://recaptcha.google.com https://filemanager.ai https://php-myadmin.net; 
+    child-src 'self' https://www.google.com;
+    connect-src 'self' https://unpkg.com https://www.google-analytics.com https://www.learn-ia.com https://learn-ia.com https://www.learn-ia.de https://learn-ia.de https://www.learn-ia.info https://learn-ia.info https://*.infinityfree.net https://*.ionos.com https://*.cloudshare.com https://filemanager.ai https://php-myadmin.net;"
+/>
+<meta http-equiv="Permissions-Policy" content="usb=*, battery=*" />
+<meta property="og:image" content="https://learn-ia.com/frontend/assets/images/logo.png" />
+<link rel="stylesheet" href="frontend/css/normalize.css" />
+<link rel="stylesheet" href="frontend/css/sanitize.css" />
+<link rel="stylesheet" href="frontend/css/styles.css" />
+<title>LearnIA</title>
+<meta name="description" content="Intelligente, personalisierte Lernplattform" />
+<meta name="keywords" content="Lernplattform, intelligente Lernplattform, personalisierte Lernplattform, Bildung, E-Learning, Individuelle Assistenz" />
+<meta name="author" content="Marco da Silva, Clara Rosenhahn, Sascha Kalnins, Stephanie Ong" />
+<link rel="canonical" href="https://www.learn-ia.com" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="LearnIA, Intelligente personalisierte Lernplattform - Lia" />
+<meta property="og:description" content="LearnIA" />
 
-  <body>
-    <header>
-      <div class="container">
+    <style>
+        .menu li.active > a {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        .flag-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .flag-dropdown {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            transform: translateY(-5px);
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .flag-dropdown img {
+            display: block;
+            width: 48px;
+            height: 32px;
+            padding: 8px;
+            cursor: pointer;
+            margin: 0 0 5px 0;
+        }
+        .flag-dropdown img:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="container">
         <div class="logo">
-          <img src="frontend/assets/images/logo.png" alt="LernIA Logo" />
+            <a href="index.html"><img src="frontend/assets/images/logo.png" alt="LearnIA Logo" /></a>
         </div>
-      </div>
-    </header>
-
-    <div class="auth-buttons">
-      <a href="frontend/views/login.html"><button>Login</button></a>
-      <a href="frontend/views/register.html"><button>Registrierung</button></a>
     </div>
+</header>
 
-    <div class="main-container">
-      <nav class="side-menu">
+<div class="auth-buttons">
+    <a href="frontend/views/login.html"><button>Login</button></a>
+    <a href="frontend/views/register.html"><button>Registrierung</button></a>
+</div>
+
+<div class="main-container">
+    <nav class="side-menu">
         <ul class="menu">
-          <li><a href="frontend/views/info.html">Über LearnIA</a></li>
-          <li><a href="frontend/views/aboutus.html">Unser Team</a></li>
-          <li><a href="frontend/views/contact.html">Kontakt</a></li>
-          <li><a href="frontend/views/impressum.html">Impressum</a></li>
+            <li class="active"><a href="index.html">Startseite</a></li>
+            <li><a href="frontend/views/info.html">Mission</a></li>
+            <li><a href="frontend/views/moral.html">Unsere Methode</a></li>
+            <li><a href="frontend/views/zusatz.html">Produkte</a></li>
+            <li><a href="frontend/views/aboutus.html">Unser Team</a></li>
+            <li><a href="frontend/views/contact.html">Kontakt</a></li>
+            <li><a href="frontend/views/impressum.html">Impressum</a></li>
         </ul>
-      </nav>
+    </nav>
 
-      <main>
+    <main>
         <section id="intro">
-          <div class="video-container">
-            <video id="intro-video" controls>
-              <source
-                src="frontend/assets/div/videoplayback.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+            <div class="intro-text">
+                <h1>Willkommen bei LearnIA</h1>
+                <p>
+                  LearnIA ist eine intelligente, personalisierte Lernplattform, die dir hilft, deine Lernziele effizient zu erreichen. Nutze die Vorteile unserer KI-basierten Technologie, um dein Lernen zu optimieren und zu individualisieren.
+              </p>
+              
+                <a href="frontend/views/register.html" class="cta-button"
+                >Jetzt registrieren</a
+                >
+            </div>
+            <div class="video-container">
+                <video
+                    id="intro-video"
+                    controls
+                    poster="frontend/assets/images/videobild.jpg"
+                >
+                    <source
+                        src="frontend/assets/div/videoplayback.mp4"
+                        type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </section>
-      </main>
-    </div>
 
-    <footer>
-      <div class="footer-content">
+        <section id="features">
+            <h2>Hauptfunktionen von LearnIA</h2>
+            <ul>
+                <li>
+                    <strong>KI-basierter Lernassistent:</strong> Unterstützt Sie bei
+                    der Planung und Organisation Ihres Lernens, hilft Ihnen, Deadlines
+                    einzuhalten und bietet personalisierte Empfehlungen.
+                </li>
+                <li>
+                    <strong>Zeitmanagement:</strong> Überwachen Sie Ihre Fortschritte
+                    und erhalten Sie Erinnerungen an wichtige Termine und Fristen.
+                </li>
+                <li>
+                    <strong>Interaktive Inhalte:</strong> Nutzen Sie interaktive
+                    Videos, Quizze und Spiele, um Ihr Wissen zu vertiefen.
+                </li>
+                <li>
+                    <strong>Community und Forum:</strong> Tauschen Sie sich in unserem
+                    Forum mit anderen Lernenden über alle möglichen lernbezogenen
+                    Themen aus.
+                </li>
+            </ul>
+        </section>
+
+        <section id="testimonials">
+            <h2>Was unsere Nutzer sagen</h2>
+            <div class="testimonial">
+                <p>
+                    "LearnIA hat mein Lernen revolutioniert! Die personalisierten
+                    Empfehlungen und das Zeitmanagement-Tool sind fantastisch." -
+                    Sarah K.
+                </p>
+            </div>
+            <div class="testimonial">
+                <p>
+                    "Dank LearnIA habe ich meine Prüfungen mit Bravour bestanden. Die
+                    interaktiven Inhalte machen das Lernen viel angenehmer." - Michael
+                    B.
+                </p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div class="footer-content">
         <div class="language-selector">
-          <button class="flag-button">
-            <img
-              id="selected-flag"
-              src="frontend/assets/images/de_flag.png"
-              alt="Deutsch"
-            />
-          </button>
+            <button class="flag-button" id="flag-button">
+                <img
+                    id="selected-flag"
+                    src="frontend/assets/images/de_flag.png"
+                    alt="Deutsch"
+                />
+            </button>
+            <div class="flag-dropdown" id="flag-dropdown">
+                <img
+                    src="frontend/assets/images/de_flag.png"
+                    alt="Deutsch"
+                    onclick="changeLanguage('de')"
+                />
+                <img
+                    src="frontend/assets/images/eng_flag.png"
+                    alt="Englisch"
+                    onclick="changeLanguage('en')"
+                />
+            </div>
         </div>
         <p>
-          &copy; <span id="current-year"></span> LernIA. Alle Rechte
-          vorbehalten.
+            &copy; <span id="current-year"></span> LearnIA. Alle Rechte
+            vorbehalten.
         </p>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-      document.getElementById(
+<script>
+    document.getElementById(
         "current-year"
-      ).textContent = new Date().getFullYear();
+    ).textContent = new Date().getFullYear();
 
-      function playVideo() {
-        const video = document.getElementById("intro-video");
-        video.play();
-      }
-    </script>
-  </body>
-</html>
+    // Markiere die aktive Seite im Menü
+    document.querySelectorAll(".menu a").forEach((link) => {
+        if (link.href === window.location.href) {
+            link.parentElement.classList.add("active");
+        }
+    });
+
+    // Dropdown-Menü bei Klick anzeigen
+    document.getElementById("flag-button").addEventListener("click", function() {
+        var dropdown = document.getElementById("flag-dropdown");
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+    });
+
+    function changeLanguage(language) {
+        if (language === 'en') {
+            alert("This feature is still under construction");
+        } else {
+            alert("Sprache gewechselt zu: Deutsch");
+        }
+        // Dropdown-Menü schließen
+        document.getElementById("flag-dropdown").style.display = "none";
+        // Beispiel: Lade eine andere Sprachversion der Seite
+        // window.location.href = language === 'de' ? 'index_de.html' : 'index_en.html';
+    }
+</script>
+</body>
+</html
